@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+          *{
+            margin: 0;
+            padding: 0;
+            background-color: #221b18;
+        }
+  ::-webkit-scrollbar {
+    width: 1em;
+    height: 2rem;
+}
+::-webkit-scrollbar-button {
+    background: #4e311c
+}
+::-webkit-scrollbar-track-piece {
+    background: #221b18
+}
+::-webkit-scrollbar-thumb {
+    background: #4e311c;
+    border-radius: 1rem;
+}​​
+      
+        body{
+            height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
+            
+        }
+       
+        img{
+            width: 100%;
+        }
+        .download-container{
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+        .download-container a{
+            color: white;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.2rem;
+            background-color: #4e311c;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s;
+        }
+        .download-container a:hover{
+            background-color: #221b18;
+        }
+</style>
+</head>
+<body>
+    <div class="images-container">
+        <!-- <a href="assets/images/1.jpg" download=""><img src="assets/images/1.jpg"></a> -->
+    </div>
+   <div class="download-container">
+    <a href="assets/pdf/brochure.pdf" download>Download</a>
+   </div>
+   <script>
+    let imagesContainer = document.querySelector(".images-container");
+    for(let i = 1;i<=8;i++)
+   {
+    let a = document.createElement("a");
+    a.href=`assets/images/${i}.jpg`;
+   a.setAttribute("download","")
+    let img = document.createElement("img");
+    img.src=`assets/images/${i}.jpg`;
+    a.appendChild(img)
+    imagesContainer.appendChild(a)
+   }
+   </script>
+</body>
+</html>
